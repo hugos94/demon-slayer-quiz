@@ -6,25 +6,75 @@
     "githubProjectUrl": "https://github.com/hugos94/demon-slayer-quiz",
     "questions": [
       {
-        "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-        "title": "Como fazer um seletor por id via CSS?",
-        "description": "Essa é pra aquecer",
+        "image": "https://img.quizur.com/f/img5f85f76058b838.40924109.jpg?lastEdited=1602615140",
+        "title": "Qual o nome do protagonista do anime?",
+        "description": "Essa é pra aquecer...",
         "answer": 2,
         "alternatives": [
-          ".elemento",
-          "*elemento",
-          "#elemento",
-          "%elemento"
+          "Zenitsu Kamado",
+          "Kateru Kamado",
+          "Tanjiro Kamado",
+          "Nezuko Kamado"
         ]
       },
       {
-        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
+        "image": "https://img.quizur.com/f/img5f85f81367f006.14434526.jpg?lastEdited=1602615324",
+        "title": "Qual é o nome dessa personagem?",
+        "description": "Essa é bem fácil, hein?",
+        "answer": 1,
+        "alternatives": [
+          "Lui",
+          "Nezuko",
+          "Hinata",
+          "Hanako"
+        ]
+      },
+      {
+        "image": "https://img.quizur.com/f/img5f85f884d46505.71747457.jpg?lastEdited=1602615437",
+        "title": "O que são Onis?",
+        "description": "Corre que o Oni tá vindo...",
+        "answer": 3,
+        "alternatives": [
+          "Animais",
+          "Anjos",
+          "Deuses",
+          "Dêmonios"
+        ]
+      },
+      {
+        "image": "https://img.quizur.com/f/img5f85f92c87c6f8.60665620.jpg?lastEdited=1602615601",
+        "title": "Qual é o nome dos dois amigos de Tanjiro?",
+        "description": "Queria uma cabeça de javali igual essa! :D",
         "answer": 0,
         "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
+          "Zenitsu e Inosuke",
+          "Rui e Zenitsu",
+          "Inosuke e Leon",
+          "Lee e Rui"
+        ]
+      },
+      {
+        "image": "https://img.quizur.com/f/img5f85f9f4530852.69571139.png?lastEdited=1602615800",
+        "title": "Quem é o maior 'Vilão' do anime?",
+        "description": "Uiii que medo",
+        "answer": 2,
+        "alternatives": [
+          "Rui",
+          "Suji",
+          "Muzan",
+          "Kamado"
+        ]
+      },
+      {
+        "image": "https://img.quizur.com/f/img5f85fa839627e4.78792656.jpg?lastEdited=1602615943",
+        "title": "O que a Nezuko é?",
+        "description": "Fofinha não é umas das respostas, tá?",
+        "answer": 3,
+        "alternatives": [
+          "Anjo",
+          "Humana",
+          "Zombi",
+          "Oni"
         ]
       }
     ],

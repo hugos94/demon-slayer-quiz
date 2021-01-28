@@ -33,31 +33,6 @@ Widget.Content = styled.div`
     margin-bottom: 0;
   }
 
-  form {
-    display: flex;
-    flex-direction: column;
-
-    input {
-      background-color: ${({ theme }) => theme.colors.mainBg};
-      border-color: ${({ theme }) => theme.colors.gray};
-      border-radius: 3.5px;
-      border-style: solid;
-      border-width: 1px;
-      color: ${({ theme }) => theme.colors.contrastText};
-      margin-bottom: 2rem;
-      padding: 0.75rem;
-
-      ::placeholder {
-        color: ${({ theme }) => theme.colors.gray};
-      }
-    }
-  }
-
-  p {
-    margin-bottom: 2rem;
-    text-align: justify;
-  }
-
   ul {
     list-style: none;
     padding: 0;
@@ -73,6 +48,23 @@ Widget.Header = styled.header`
 
   * {
     margin: 0;
+  }
+`;
+
+Widget.Topic = styled.a`
+  background-color: ${({ theme }) => `${theme.colors.primary}40`};
+  border-radius: ${({ theme }) => theme.borderRadius};
+  color: ${({ theme }) => theme.colors.contrastText};
+  cursor: pointer;
+  display: block;
+  margin-bottom: 8px;
+  outline: 0;
+  padding: 10px 15px;
+  text-decoration: none;
+  transition: .3s;
+
+  &:hover, &:focus {
+    opacity: .5;
   }
 `;
 

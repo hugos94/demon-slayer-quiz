@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import db from '../db.json';
 
 import GitHubCorner from '../src/components/GitHubCorner';
+import Input from '../src/components/Input';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizButton from '../src/components/QuizButton';
 import QuizContainer from '../src/components/QuizContainer';
@@ -32,9 +33,11 @@ export default function Home() {
                   router.push(`/quiz?name=${name}`);
                 }}
               >
-                <input
-                  onChange={(event) => { setName(event.target.value); }}
+                <Input
+                  name="userName"
+                  onChange={(event) => setName(event.target.value)}
                   placeholder="Informe o seu nome..."
+                  value={name}
                 />
                 <QuizButton type="submit" disabled={name.length === 0}>
                   Jogar
