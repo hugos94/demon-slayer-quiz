@@ -79,7 +79,14 @@
       }
     ],
     "external": [
-      ""
+      {
+        "quizName": "Warrior Nun",
+        "quizURL": "https://warrior-nun-quiz.nayaraholanda.vercel.app/"
+      },
+      {
+        "quizName": "Cavaleiros do Zodíaco",
+        "quizURL": "https://quiz-cavaleiro-zodiaco.vercel.app/"
+      }
     ],
     "theme": {
       "colors": {

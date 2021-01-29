@@ -26,7 +26,7 @@ export default function Home() {
               <h1>Demon Slayer Quiz</h1>
             </Widget.Header>
             <Widget.Content>
-              <p>Teste os seus conhecimentos sobre Demon Slayer!</p>
+              <p style={{ textAlign: 'justify' }}>Teste os seus conhecimentos sobre Demon Slayer!</p>
               <form
                 onSubmit={(event) => {
                   event.preventDefault();
@@ -49,7 +49,15 @@ export default function Home() {
             <Widget.Content>
               <h1>Quizes da Galera</h1>
 
-              <p>lorem ipsum</p>
+              {db.external.map(({ quizName, quizURL }) => (
+                <p>
+                  <a href={quizURL} target="_blank" rel="noreferrer">
+                    <QuizButton>
+                      {quizName}
+                    </QuizButton>
+                  </a>
+                </p>
+              ))}
             </Widget.Content>
           </Widget>
           <QuizFooter />
