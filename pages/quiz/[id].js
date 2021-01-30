@@ -1,11 +1,27 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 
-export default function QuizDaGaleraPage() {
+import QuizScreen from '../../src/screens/Quiz';
+
+export default function QuizDaGaleraPage({ dbExterno }) {
+  const { theme } = dbExterno;
   return (
     <>
-      <div>
-        Desafio da próxima aula junto com as animações!
-      </div>
+      <ThemeProvider theme={theme}>
+        <QuizScreen dbExterno={dbExterno} />
+      </ThemeProvider>
     </>
   );
+}
+
+export async function getServerSideProps({ query }) {
+  const dbExterno = await fetch('https://warrior-nun-quiz.nayaraholanda.vercel.app/api/db')
+    .then((response) => response.json())
+    .then((response) => response);
+
+  return {
+    props: {
+      dbExterno,
+    },
+  };
 }

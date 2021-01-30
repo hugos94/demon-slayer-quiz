@@ -84,8 +84,12 @@
         "quizURL": "https://warrior-nun-quiz.nayaraholanda.vercel.app/"
       },
       {
-        "quizName": "Cavaleiros do Zodíaco",
-        "quizURL": "https://quiz-cavaleiro-zodiaco.vercel.app/"
+        "quizName": "Star Wars",
+        "quizURL": "https://quiz-react.brenoha.vercel.app/"
+      },
+      {
+        "quizName": "VITRINE",
+        "quizURL": "https://aluraquiz-base.alura-challenges.vercel.app/contribuidores"
       }
     ],
     "theme": {

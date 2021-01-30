@@ -1,16 +1,15 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 
-import db from '../db.json';
-
-import AlternativesForm from '../src/components/AlternativesForm';
-import GitHubCorner from '../src/components/GitHubCorner';
-import QuizBackground from '../src/components/QuizBackground';
-import QuizButton from '../src/components/QuizButton';
-import QuizContainer from '../src/components/QuizContainer';
-import QuizFooter from '../src/components/QuizFooter';
-import QuizLogo from '../src/components/QuizLogo';
-import Widget from '../src/components/Widget';
+import AlternativesForm from '../../components/AlternativesForm';
+import BlackLinkArrow from '../../components/BlackLinkArrow';
+import GitHubCorner from '../../components/GitHubCorner';
+import QuizBackground from '../../components/QuizBackground';
+import QuizButton from '../../components/QuizButton';
+import QuizContainer from '../../components/QuizContainer';
+import QuizFooter from '../../components/QuizFooter';
+import QuizLogo from '../../components/QuizLogo';
+import Widget from '../../components/Widget';
 
 function LoadingWidget() {
   return (
@@ -44,16 +43,19 @@ function ResultQuiz({ results, totalQuestions }) {
           </p>
 
           <ul>
-            {results.map((result, resultIndex) => (
-              <li key={`result__${result}`}>
-                Pergunta #
-                {resultIndex + 1}
-                {' | '}
-                Resultado:
-                {' '}
-                {result === true ? 'Acertou' : 'Errou'}
-              </li>
-            ))}
+            {results.map((result, resultIndex) => {
+              const answerID = `result__${resultIndex}`;
+              return (
+                <li key={answerID}>
+                  Pergunta #
+                  {resultIndex + 1}
+                  {' | '}
+                  Resultado:
+                  {' '}
+                  {result === true ? 'Acertou' : 'Errou'}
+                </li>
+              );
+            })}
           </ul>
         </Widget.Content>
       </Widget>
@@ -80,7 +82,7 @@ function QuestionWidget({
     <>
       <Widget>
         <Widget.Header>
-          {/* <BlackLinkArrow href="/" /> */}
+          <BlackLinkArrow href="/" />
           <h3>
             {`Pergunta ${questionIndex + 1} de ${totalQuestions}`}
           </h3>
@@ -129,7 +131,7 @@ function QuestionWidget({
                     style={{ display: 'none' }}
                     id={alternativeId}
                     name={questionId}
-                    onChange={() => setSelectedAlternative(alternativeIndex)}
+                    onClick={() => setSelectedAlternative(alternativeIndex)}
                     type="radio"
                     value={alternativeIndex}
                   />
@@ -143,8 +145,8 @@ function QuestionWidget({
             </QuizButton>
 
             <p style={{ textAlign: 'center' }}>
-              {isFormSubmitted && isCorrect && <p>Você acertou! :D</p>}
-              {isFormSubmitted && !isCorrect && <p>Você errou! :/</p>}
+              {isFormSubmitted && isCorrect && <strong>Você acertou! :D</strong>}
+              {isFormSubmitted && !isCorrect && <strong>Você errou! :/</strong>}
             </p>
           </AlternativesForm>
         </Widget.Content>
@@ -159,15 +161,15 @@ const screenStates = {
   RESULT: 'RESULT',
 };
 
-export default function QuizPage() {
+export default function QuizPage({ dbExterno }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [results, setResults] = useState([]);
   const [screenState, setScreenState] = useState(screenStates.LOADING);
 
   const questionIndex = currentQuestion;
-  const question = db.questions[questionIndex];
+  const question = dbExterno.questions[questionIndex];
 
-  const totalQuestions = db.questions.length;
+  const totalQuestions = dbExterno.questions.length;
 
   function addResult(result) {
     setResults([
@@ -192,7 +194,7 @@ export default function QuizPage() {
 
   return (
     <>
-      <QuizBackground backgroundImage={db.bg}>
+      <QuizBackground backgroundImage={dbExterno.bg}>
         <QuizContainer>
           <QuizLogo />
           {screenState === screenStates.QUIZ && (
@@ -216,7 +218,7 @@ export default function QuizPage() {
 
           <QuizFooter />
         </QuizContainer>
-        <GitHubCorner projectUrl={db.githubProjectUrl} />
+        <GitHubCorner projectUrl={dbExterno.githubProjectUrl} />
       </QuizBackground>
     </>
   );
